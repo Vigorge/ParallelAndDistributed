@@ -1,4 +1,4 @@
-package labTwo.serializable;
+package lab3.serializable;
 
 import java.io.Serializable;
 

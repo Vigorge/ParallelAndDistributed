@@ -1,7 +1,7 @@
-package labTwo;
+package lab3;
 
-import labTwo.functions.*;
-import labTwo.serializable.*;
+import lab3.functions.*;
+import lab3.serializable.*;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapred.TextInputFormat;
