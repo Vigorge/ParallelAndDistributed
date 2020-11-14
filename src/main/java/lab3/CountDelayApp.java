@@ -27,7 +27,7 @@ public class CountDelayApp {
 
     public static void main(String[] args) throws Exception {
         if (args.length != 3) {
-            System.err.println("Command line arguments format: <first input table> <second input table> <output path>");
+            System.err.println("Command line arguments format: <airport names table> <flights info table> <output path>");
             System.exit(-1);
         }
 
@@ -36,7 +36,7 @@ public class CountDelayApp {
 
         //Collecting data from airports.csv
         Map<String, String> airportNameMap = sc
-                .hadoopFile("airports.csv", TextInputFormat.class, LongWritable.class, Text.class)
+                .hadoopFile(args[0], TextInputFormat.class, LongWritable.class, Text.class)
                 .filter(tblStr -> tblStr._1().get() != 0)
                 .map(valStr -> TableRowData.parseRowQuoted(valStr._2().toString(), DELIMETER))
                 .mapToPair(row -> new Tuple2<>(row.getValue(PORT_ID_COL), row.getValue(PORT_NAME_COL)))
@@ -47,7 +47,7 @@ public class CountDelayApp {
 
         //Collecting data from flights.csv
         JavaPairRDD<Tuple2<String, String>, FlightStats> delayData = sc
-                .hadoopFile("flights.csv", TextInputFormat.class, LongWritable.class, Text.class)
+                .hadoopFile(args[1], TextInputFormat.class, LongWritable.class, Text.class)
                 .filter(tblStr -> tblStr._1.get() != 0)
                 .map(valStr -> TableRowData.parseRow(valStr._2().toString(), DELIMETER))
                 .mapToPair(row -> new Tuple2<>(new Tuple2<>(row.getValue(ORIGIN_PORT_ID_COL), row.getValue(DEST_PORT_ID_COL)), row.getValue(DELAY_COL)))
@@ -58,6 +58,6 @@ public class CountDelayApp {
                 pair -> FlightStats.formResultString(pair, airportsBroadcasted.value())
         );
 
-        result.saveAsTextFile("output");
+        result.saveAsTextFile(args[2]);
     }
 }
