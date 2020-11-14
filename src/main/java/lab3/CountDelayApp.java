@@ -58,6 +58,7 @@ public class CountDelayApp {
                 pair -> FlightStats.formResultString(pair, airportsBroadcasted.value())
         );
 
+        //Exporting result
         result.saveAsTextFile(args[2]);
     }
 }
