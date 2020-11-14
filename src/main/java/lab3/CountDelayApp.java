@@ -26,6 +26,11 @@ public class CountDelayApp {
     private static final int DELAY_COL = 18;
 
     public static void main(String[] args) throws Exception {
+        if (args.length != 3) {
+            System.err.println("Command line arguments format: <first input table> <second input table> <output path>");
+            System.exit(-1);
+        }
+
         SparkConf conf = new SparkConf().setAppName("CountDelayApp");
         JavaSparkContext sc = new JavaSparkContext(conf);
 

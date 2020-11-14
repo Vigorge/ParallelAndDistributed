@@ -14,7 +14,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class AirportApp {
     public static void main(String[] args) throws Exception {
         if (args.length != 3) {
-            System.err.println("Usage: lab2.AirportApp <first input table> <second input table> <output path>");
+            System.err.println("Usage: lab2.AirportApp <airport names table> <flights info table> <output path>");
             System.exit(-1);
         }
         Job job = Job.getInstance();
