@@ -1,4 +1,4 @@
-package labOne.dataformats;
+package lab2.dataformats;
 
 public class DelayData {
     private String airportID;

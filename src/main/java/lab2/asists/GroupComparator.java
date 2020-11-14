@@ -1,6 +1,6 @@
-package labOne.asists;
+package lab2.asists;
 
-import labOne.dataformats.AirportIDPair;
+import lab2.dataformats.AirportIDPair;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 

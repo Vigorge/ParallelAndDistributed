@@ -1,7 +1,7 @@
-package labOne.mapreduce;
+package lab2.mapreduce;
 
-import labOne.dataformats.AirportData;
-import labOne.dataformats.AirportIDPair;
+import lab2.dataformats.AirportData;
+import lab2.dataformats.AirportIDPair;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;

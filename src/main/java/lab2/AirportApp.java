@@ -1,8 +1,8 @@
-package labOne;
+package lab2;
 
-import labOne.asists.*;
-import labOne.dataformats.AirportIDPair;
-import labOne.mapreduce.*;
+import lab2.asists.*;
+import lab2.dataformats.AirportIDPair;
+import lab2.mapreduce.*;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
@@ -14,7 +14,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class AirportApp {
     public static void main(String[] args) throws Exception {
         if (args.length != 3) {
-            System.err.println("Usage: labOne.AirportApp <first input table> <second input table> <output path>");
+            System.err.println("Usage: lab2.AirportApp <first input table> <second input table> <output path>");
             System.exit(-1);
         }
         Job job = Job.getInstance();

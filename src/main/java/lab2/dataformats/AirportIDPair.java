@@ -1,4 +1,4 @@
-package labOne.dataformats;
+package lab2.dataformats;
 
 import org.apache.hadoop.io.WritableComparable;
 import java.io.DataInput;
