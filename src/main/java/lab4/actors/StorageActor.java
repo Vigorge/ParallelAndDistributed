@@ -4,5 +4,7 @@ import akka.actor.AbstractActor;
 
 public class StorageActor extends AbstractActor {
 
-    public Receive createRecieve()
+    public Receive createRecieve() {
+        
+    }
 }
