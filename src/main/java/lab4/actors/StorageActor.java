@@ -2,6 +2,7 @@ package lab4.actors;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
+import lab4.asists.GetMessage;
 import lab4.asists.PutMessage;
 
 import java.util.HashMap;
@@ -14,7 +15,7 @@ public class StorageActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(PutMessage.class, r ->
                     storage.put(r.getPackID(), r.getResult()))
-                .match()
+                .match(GetMessage.class, )
                 .build();
     }
 }
