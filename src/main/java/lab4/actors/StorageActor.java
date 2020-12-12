@@ -5,11 +5,12 @@ import akka.japi.pf.ReceiveBuilder;
 import lab4.asists.GetMessage;
 import lab4.asists.PutMessage;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class StorageActor extends AbstractActor {
-    private Map<String, String> storage = new HashMap<>();
+    private Map<String, ArrayList<String>> storage = new HashMap<>();
 
     public Receive createReceive() {
         return ReceiveBuilder.create()
