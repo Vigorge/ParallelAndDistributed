@@ -18,6 +18,6 @@ public class TaskTestingApp {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         //добавить обработку запросов
         //final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
-        final CompletionStage<ServerBinding> binding = http,bindA
+        final CompletionStage<ServerBinding> binding = http.bindAndHandle()
     }
 }
