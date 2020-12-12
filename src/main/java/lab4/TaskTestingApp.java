@@ -13,7 +13,7 @@ import java.util.concurrent.CompletionStage;
 
 public class TaskTestingApp {
     private static final int PORT = 8088;
-    private static final String HOST = "https";
+    private static final String HOST = "localhost";
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create("webtest");
         final Http http = Http.get(system);
@@ -21,6 +21,6 @@ public class TaskTestingApp {
         //добавить обработку запросов
         //final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
         //final CompletionStage<ServerBinding> binding = http.bindAndHandle()
-        System.out.println("Server online at %s:%d/\nPress ENTER to stop", );
+        System.out.println("Server online at https//%s:%d/\nPress ENTER to stop", );
     }
 }
