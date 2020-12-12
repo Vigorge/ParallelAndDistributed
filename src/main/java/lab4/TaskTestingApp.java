@@ -21,6 +21,6 @@ public class TaskTestingApp {
         //добавить обработку запросов
         //final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
         //final CompletionStage<ServerBinding> binding = http.bindAndHandle()
-        System.out.println("Server online at https//%s:%d/\nPress ENTER to stop", );
+        System.out.println("Server online at https://%s:%d/\nPress ENTER to stop", HOST, PORT);
     }
 }
