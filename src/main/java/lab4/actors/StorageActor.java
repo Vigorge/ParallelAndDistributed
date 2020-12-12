@@ -2,7 +2,7 @@ package lab4.actors;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
-import junit.framework.TestResult;
+import lab4.asists.TestData;
 
 import java.security.MessageDigest;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ public class StorageActor extends AbstractActor {
 
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(TestResult.class, r -> {
+                .match(TestData.class, r -> {
                     storage.put(r.getPackID())
                 })
                 .build();
