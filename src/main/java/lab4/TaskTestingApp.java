@@ -3,6 +3,7 @@ package lab4;
 import akka.NotUsed;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.ServerBinding;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import org.apache.http.HttpRequest;
@@ -17,6 +18,6 @@ public class TaskTestingApp {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         //добавить обработку запросов
         //final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
-        final CompletionStage
+        final CompletionStage<ServerBinding> 
     }
 }
