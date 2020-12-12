@@ -22,5 +22,6 @@ public class TaskTestingApp {
         //final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
         //final CompletionStage<ServerBinding> binding = http.bindAndHandle()
         System.out.printf("Server online at https://%s:%d/\nPress ENTER to stop\n", HOST, PORT);
+        System.in
     }
 }
