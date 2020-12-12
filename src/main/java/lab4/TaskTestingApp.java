@@ -8,6 +8,8 @@ import akka.stream.javadsl.Flow;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 
+import java.util.concurrent.CompletionStage;
+
 public class TaskTestingApp {
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create("webtest");
@@ -15,7 +17,6 @@ public class TaskTestingApp {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         //добавить обработку запросов
         //final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
-
-        
+        final CompletionStage
     }
 }
