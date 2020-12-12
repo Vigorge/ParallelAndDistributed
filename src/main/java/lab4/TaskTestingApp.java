@@ -3,6 +3,7 @@ package lab4;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
 import akka.stream.ActorMaterializer;
+import org.apache.http.HttpRequest;
 
 public class TaskTestingApp {
     public static void main(String[] args) {
@@ -10,7 +11,7 @@ public class TaskTestingApp {
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         //добавить обработку запросов
-        final Flow<HTTP>
+        final Flow<HttpRequest, >
 
     }
 }
