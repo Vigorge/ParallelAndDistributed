@@ -7,10 +7,13 @@ import junit.framework.TestResult;
 import java.security.MessageDigest;
 
 public class StorageActor extends AbstractActor {
+    private 
 
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(TestResult.class, r -> {})
+                .match(TestResult.class, r -> {
+
+                })
                 .build();
     }
 }
