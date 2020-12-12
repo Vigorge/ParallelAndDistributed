@@ -14,7 +14,7 @@ public class StorageActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(TestResult.class, r -> {
-                    storage.
+                    storage.put()
                 })
                 .build();
     }
