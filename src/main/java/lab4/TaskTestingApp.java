@@ -10,7 +10,7 @@ public class TaskTestingApp {
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         //добавить обработку запросов
-        
+        final Flow 
 
     }
 }
