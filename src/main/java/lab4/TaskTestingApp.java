@@ -8,7 +8,8 @@ public class TaskTestingApp {
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create("webtest");
         final Http http = Http.get(system);
-        final ActorMaterializer materializer = ActorMaterializer.
+        final ActorMaterializer materializer = ActorMaterializer.create(system);
+        
 
     }
 }
