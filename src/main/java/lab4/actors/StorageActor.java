@@ -5,9 +5,10 @@ import akka.japi.pf.ReceiveBuilder;
 import junit.framework.TestResult;
 
 import java.security.MessageDigest;
+import java.util.HashMap;
 
 public class StorageActor extends AbstractActor {
-    private Map<String, String>store = new 
+    private Map<String, String>store = new HashMap<>()
 
     public Receive createReceive() {
         return ReceiveBuilder.create()
