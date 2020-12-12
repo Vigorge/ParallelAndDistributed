@@ -8,7 +8,6 @@ import java.security.MessageDigest;
 
 public class StorageActor extends AbstractActor {
 
-    public static class 
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(TestResult.class)
