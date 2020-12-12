@@ -1,4 +1,8 @@
 package lab4.actors;
 
-public class StorageActor {
+import akka.actor.AbstractActor;
+
+public class StorageActor extends AbstractActor {
+
+    Re
 }
