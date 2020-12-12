@@ -7,7 +7,7 @@ import junit.framework.TestResult;
 import java.security.MessageDigest;
 
 public class StorageActor extends AbstractActor {
-    private Map<String, String>store
+    private Map<String, String>store = new 
 
     public Receive createReceive() {
         return ReceiveBuilder.create()
