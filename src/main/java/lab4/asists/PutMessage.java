@@ -2,7 +2,7 @@ package lab4.asists;
 
 import java.io.Serializable;
 
-public class PutMessage implements Serializable {
+public class PutMessage {
     private final String packID, result;
 
     public PutMessage(String packID, String result) {
