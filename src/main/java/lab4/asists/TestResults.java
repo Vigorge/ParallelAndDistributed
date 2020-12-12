@@ -1,5 +1,7 @@
 package lab4.asists;
 
-public class TestResults {
-    
+import java.io.Serializable;
+
+public class TestResults implements Serializable {
+
 }
