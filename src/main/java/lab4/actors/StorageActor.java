@@ -5,7 +5,9 @@ import akka.japi.pf.ReceiveBuilder;
 
 public class StorageActor extends AbstractActor {
 
-    public Receive createRecieve() {
+    public Receive createReceive() {
         return ReceiveBuilder.create()
+                .match()
+                .build();
     }
 }
