@@ -41,12 +41,10 @@ public class RouterActor extends AbstractActor {
                         for (TestData t : r.getTests()) {
                             router.route(new ExecMessage(r.getPackageID(), r.getFunctionName(),
                                         r.getJsScript(), t.getTestName(), t.getExpectedResult(),
-                                        t.getParams()), self());
+                                        t.getParams()), storage);
                         }
                         }
                         )
-                .match(PutMessage.class, r ->
-                        storage.tell(r, sender()))
                 .match(GetMessage.class, r ->
                         storage.tell(r, sender())
                         )

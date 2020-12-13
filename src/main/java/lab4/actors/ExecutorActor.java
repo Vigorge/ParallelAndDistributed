@@ -17,7 +17,7 @@ public class ExecutorActor extends AbstractActor {
             ScriptEngine e = new ScriptEngineManager().getEngineByName("nashorn");
             e.eval(r.getJsScript());
             Invocable in = (Invocable) e;
-            result = in.invokeFunction(r.getFuncName(), r.getParams()).toString();
+            result = in.invokeFunction(r.getFuncName(), r.getParams().toArray()).toString();
         } catch (Exception e) {
             return String.format("%s: ERROR, %s", r.getTestName(), e.toString());
         }
