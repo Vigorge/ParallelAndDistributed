@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="147351f3-5c0f-433d-b8ee-109e202df302" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab4/actors/ExecutorActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/actors/ExecutorActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab4/messages/ExecMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/messages/ExecMessage.java" afterDir="false" />
-    </list>
+    <list default="true" id="147351f3-5c0f-433d-b8ee-109e202df302" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,8 +86,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab4/actors/RouterActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+            <state relative-caret-position="126">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -193,6 +193,7 @@
         <option value="$PROJECT_DIR$/src/main/java/lab4/assists/PackageData.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab4/messages/ExecMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab4/actors/ExecutorActor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lab4/actors/RouterActor.java" />
       </list>
     </option>
   </component>
@@ -343,15 +344,16 @@
       <workItem from="1605461716682" duration="1230000" />
       <workItem from="1605706096386" duration="5470000" />
       <workItem from="1607447609427" duration="3202000" />
-      <workItem from="1607807852938" duration="14067000" />
+      <workItem from="1607807852938" duration="14763000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28823000" />
+    <option name="totallyTimeSpent" value="29519000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="32" width="1920" height="977" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17650215" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -587,8 +589,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lab4/actors/RouterActor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        <state relative-caret-position="126">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
