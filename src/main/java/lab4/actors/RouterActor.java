@@ -17,7 +17,6 @@ import lab4.messages.PutMessage;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
 
 public class RouterActor extends AbstractActor {
     private Router router;
@@ -40,7 +39,9 @@ public class RouterActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(PackageData.class, r -> {
                         for (TestData t : r.getTests()) {
-                            router.route(new ExecMessage(r.getPackageID(), r.getFunctionName(), r.getJsScript(), t.getParams()), self());
+                            router.route(new ExecMessage(r.getPackageID(), r.getFunctionName(),
+                                        r.getJsScript(), t.getTestName(), t.getExpectedResult(),
+                                        t.getParams()), self());
                         }
                         }
                         )
