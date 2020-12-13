@@ -2,7 +2,8 @@ package lab4.assists;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
-import com.squareup.okhttp.Route;
+import akka.http.javadsl.server.Route;
+import akka.http.javadsl.server.PathMatchers;
 
 public class HttpParse {
     private final ActorRef router;
@@ -14,6 +15,6 @@ public class HttpParse {
     }
 
     public Route createRoute() {
-        return r
+        return path
     }
 }
