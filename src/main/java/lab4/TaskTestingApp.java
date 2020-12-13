@@ -6,13 +6,12 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
-import akka.pattern.Patterns;
+import akka.http.javadsl.model.HttpRequest;
+import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import lab4.actors.RouterActor;
 import lab4.assists.HttpParse;
-import org.apache.http.HttpRequest;
-import org.apache.http.HttpResponse;
 
 import java.util.concurrent.CompletionStage;
 
@@ -25,7 +24,7 @@ public class TaskTestingApp {
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         HttpParse instance = new HttpParse(routerActor);
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = instance.createRoute().flow()
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = instance.createRoute().flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle()
         System.out.printf("Server online at https://%s:%d/\nPress ENTER to stop\n", HOST, PORT);
         System.in.read();
