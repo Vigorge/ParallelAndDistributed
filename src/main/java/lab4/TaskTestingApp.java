@@ -24,7 +24,7 @@ public class TaskTestingApp {
         ActorRef routerActor = system.actorOf(Props.create(RouterActor.class), "router");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        HttpParse instanse
+        HttpParse instance = new HttpParse()
         //добавить обработку запросов
         //final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
         //final CompletionStage<ServerBinding> binding = http.bindAndHandle()
