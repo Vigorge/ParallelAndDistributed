@@ -5,7 +5,7 @@ import akka.routing.Router;
 
 public class RouterActor extends AbstractActor {
     private Router router;
-    private 
+    private
 
     @Override
     public Receive createReceive() {
