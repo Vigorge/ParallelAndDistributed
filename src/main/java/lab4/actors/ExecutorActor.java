@@ -13,11 +13,17 @@ import javax.script.ScriptException;
 
 public class ExecutorActor extends AbstractActor {
 
-    private String execute(ExecMessage r) throws ScriptException, NoSuchMethodException {
-        ScriptEngine e = new ScriptEngineManager().getEngineByName("nashorn");
-        e.eval(r.getJsScript());
-        Invocable in = (Invocable) e;
-        return in.invokeFunction(r.getFuncName(), r.getParams()).toString();
+    private String execute(ExecMessage r) {
+        String result;
+        try {
+            ScriptEngine e = new ScriptEngineManager().getEngineByName("nashorn");
+            e.eval(r.getJsScript());
+            Invocable in = (Invocable) e;
+            result = in.invokeFunction(r.getFuncName(), r.getParams()).toString();
+        } catch (Exception e) {
+            return e.toString();
+        }
+        return result;
     }
 
     public Receive createReceive() {
