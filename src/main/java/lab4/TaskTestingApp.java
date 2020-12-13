@@ -28,8 +28,9 @@ public class TaskTestingApp {
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = instance.createRoute().flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
-                ConnectHttp.toHost(HOST, PORT)
-        )
+                ConnectHttp.toHost(HOST, PORT),
+                materializer
+        );
         System.out.printf("Server online at https://%s:%d/\nPress ENTER to stop\n", HOST, PORT);
         System.in.read();
         //binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
