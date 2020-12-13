@@ -24,7 +24,7 @@ public class StorageActor extends AbstractActor {
                         }
                         })
                 .match(GetMessage.class, r ->
-                        sender().tell(new ResultMessage(r.getPackID(), storage.get(r.getPackID())), self()))
+                        sender().tell(new ResultMessage(r.getPackID(), storage.get(r.getPackID())), getContext().parent()))
                 .matchAny(o -> System.out.println("Unknown message handled"))
                 .build();
     }
