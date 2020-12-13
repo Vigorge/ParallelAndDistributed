@@ -15,6 +15,6 @@ public class HttpParse {
     }
 
     public Route createRoute() {
-        return path
+        return Route.class
     }
 }
