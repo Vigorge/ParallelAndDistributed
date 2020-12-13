@@ -1,7 +1,7 @@
 package lab4.assists;
 
-import org.apache.htrace.shaded.fasterxml.jackson.annotation.JsonCreator;
-import org.apache.htrace.shaded.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 

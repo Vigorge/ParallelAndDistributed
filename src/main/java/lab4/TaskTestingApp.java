@@ -31,7 +31,7 @@ public class TaskTestingApp {
                 ConnectHttp.toHost(HOST, PORT),
                 materializer
         );
-        System.out.printf("Server online at https://%s:%d/\nPress ENTER to stop\n", HOST, PORT);
+        System.out.printf("Server online at https://%s:%d/\n", HOST, PORT);
         System.in.read();
         binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
     }

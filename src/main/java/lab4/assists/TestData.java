@@ -1,7 +1,7 @@
 package lab4.assists;
 
-import org.apache.htrace.shaded.fasterxml.jackson.annotation.JsonCreator;
-import org.apache.htrace.shaded.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -12,12 +12,12 @@ public class TestData {
     @JsonProperty("expectedResult")
     private final String expectedResult;
     @JsonProperty("params")
-    private final ArrayList<Object> params;
+    private final ArrayList<Integer> params;
 
     @JsonCreator
     public TestData(@JsonProperty("testName") String testName,
                     @JsonProperty("expectedResult") String expectedResult,
-                    @JsonProperty("params") ArrayList<Object> params)
+                    @JsonProperty("params") ArrayList<Integer> params)
     {
         this.testName = testName;
         this.expectedResult = expectedResult;
@@ -32,7 +32,7 @@ public class TestData {
         return expectedResult;
     }
 
-    public ArrayList<Object> getParams() {
+    public ArrayList<Integer> getParams() {
         return params;
     }
 }
