@@ -31,7 +31,9 @@ public class RouterActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(ExecMessage.class, r ->
-                        sender().tell(new PutMessage(r.getPackID(), execute(r)), self()))
+                        router.route(r, self()))
+                .match(PutMessage.class, r ->
+                        storage.tell(r, self()))
                 .build();
     }
 }
