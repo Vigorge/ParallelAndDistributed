@@ -4,7 +4,6 @@ import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
-import akka.pattern.Patterns;
 import akka.routing.ActorRefRoutee;
 import akka.routing.RoundRobinRoutingLogic;
 import akka.routing.Routee;
@@ -41,7 +40,7 @@ public class RouterActor extends AbstractActor {
                 .match(PutMessage.class, r ->
                         storage.tell(r, self()))
                 .match(GetMessage.class, r ->
-                                Patterns.ask()
+                        storage.tell(r, sender())
                         )
                 .build();
     }
