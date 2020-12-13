@@ -10,6 +10,7 @@ import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import lab4.actors.RouterActor;
+import lab4.assists.HttpParse;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 
@@ -23,7 +24,7 @@ public class TaskTestingApp {
         ActorRef routerActor = system.actorOf(Props.create(RouterActor.class), "router");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        
+        HttpParse 
         //добавить обработку запросов
         //final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
         //final CompletionStage<ServerBinding> binding = http.bindAndHandle()
