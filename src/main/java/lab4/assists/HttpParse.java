@@ -3,7 +3,8 @@ package lab4.assists;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.server.Route;
-import akka.http.javadsl.server.PathMatchers;
+
+import static akka.http.javadsl.server.Directives.pathPrefix;
 import static akka.http.javadsl.server.Directives.route;
 
 public class HttpParse {
@@ -17,7 +18,7 @@ public class HttpParse {
 
     public Route createRoute() {
         return route(
-                
+                pathPrefix("")
         );
     }
 }
