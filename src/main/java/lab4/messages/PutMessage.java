@@ -1,6 +1,4 @@
-package lab4.asists;
-
-import java.io.Serializable;
+package lab4.messages;
 
 public class PutMessage {
     private final String packID, result;

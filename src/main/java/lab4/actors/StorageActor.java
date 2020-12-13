@@ -1,11 +1,10 @@
 package lab4.actors;
 
 import akka.actor.AbstractActor;
-import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
-import lab4.asists.GetMessage;
-import lab4.asists.PutMessage;
-import lab4.asists.ResultMessage;
+import lab4.messages.GetMessage;
+import lab4.messages.PutMessage;
+import lab4.messages.ResultMessage;
 
 import java.util.*;
 

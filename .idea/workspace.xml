@@ -4,6 +4,9 @@
     <list default="true" id="147351f3-5c0f-433d-b8ee-109e202df302" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/lab4/actors/ExecutorActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/actors/ExecutorActor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab4/actors/StorageActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/actors/StorageActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab4/asists/GetMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/messages/GetMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab4/asists/PutMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/messages/PutMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab4/asists/ResultMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/messages/ResultMessage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab4/actors/StorageActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="558">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,7 +52,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lab4/asists/ResultMessage.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lab4/messages/ResultMessage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
               <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
@@ -66,8 +69,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab4/actors/ExecutorActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            <state relative-caret-position="162">
+              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,7 +79,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lab4/asists/GetMessage.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lab4/messages/GetMessage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
               <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
@@ -91,10 +94,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lab4/asists/PutMessage.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lab4/messages/PutMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+            <state relative-caret-position="36">
+              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
               <folding>
                 <element signature="e#350#351#0" expanded="true" />
                 <element signature="e#379#380#0" expanded="true" />
@@ -220,7 +223,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="lab4" type="462c0819:PsiDirectoryNode" />
-              <item name="asists" type="462c0819:PsiDirectoryNode" />
+              <item name="messages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -278,16 +281,15 @@
       <workItem from="1605461716682" duration="1230000" />
       <workItem from="1605706096386" duration="5470000" />
       <workItem from="1607447609427" duration="3202000" />
-      <workItem from="1607807852938" duration="7883000" />
+      <workItem from="1607807852938" duration="8342000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22639000" />
+    <option name="totallyTimeSpent" value="23098000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="32" width="1920" height="977" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26502147" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -410,10 +412,10 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lab4/asists/PutMessage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/lab4/messages/PutMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        <state relative-caret-position="36">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
           <folding>
             <element signature="e#350#351#0" expanded="true" />
             <element signature="e#379#380#0" expanded="true" />
@@ -423,7 +425,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lab4/asists/GetMessage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/lab4/messages/GetMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
@@ -436,7 +438,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lab4/asists/ResultMessage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/lab4/messages/ResultMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
@@ -451,8 +453,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lab4/actors/StorageActor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="558">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -461,8 +463,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lab4/actors/ExecutorActor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        <state relative-caret-position="162">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

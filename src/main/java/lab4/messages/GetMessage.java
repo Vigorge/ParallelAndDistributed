@@ -1,4 +1,4 @@
-package lab4.asists;
+package lab4.messages;
 
 public class GetMessage {
     private final String packID;
