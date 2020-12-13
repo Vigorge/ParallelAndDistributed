@@ -22,7 +22,7 @@ public class StorageActor extends AbstractActor {
                             results.add(r.getResult());
                             storage.put(r.getPackID(), results);
                         }
-                        se
+                        sender().tell("Test Executed and stored", getContext().parent());
                         })
                 .match(GetMessage.class, r ->
                         sender().tell(new ResultMessage(r.getPackID(), storage.get(r.getPackID())), getContext().parent()))
