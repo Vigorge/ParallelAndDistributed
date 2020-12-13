@@ -49,7 +49,6 @@ public class RouterActor extends AbstractActor {
                 .match(GetMessage.class, r ->
                         storage.tell(r, sender())
                         )
-                .match(Terminated.class, t -> )
                 .build();
     }
 }
