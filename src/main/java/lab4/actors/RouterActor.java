@@ -9,7 +9,11 @@ public class RouterActor extends AbstractActor {
     private Router router;
     private ActorRef storage = getContext().actorOf(Props.create(StorageActor.class));
 
-    public Receive createReceive() {
+    public RouterActor() {
         
+    }
+
+    public Receive createReceive() {
+
     }
 }
