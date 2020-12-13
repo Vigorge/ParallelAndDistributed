@@ -37,7 +37,7 @@ public class RouterActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(PackageData.class, r -> {
-                        fo (t : r.getTests()) {
+                        for (t : r.getTests()) {
 
                         }
                         }
