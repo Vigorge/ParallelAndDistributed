@@ -22,7 +22,7 @@ public class HttpParse {
 
                 })),
                 post(() -> entity(Jackson.unmarshaller(PackageData.class), msg -> {
-                    
+
                 }))
         );
     }
