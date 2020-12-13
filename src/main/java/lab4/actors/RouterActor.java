@@ -4,8 +4,8 @@ import akka.actor.AbstractActor;
 import akka.routing.Router;
 
 public class RouterActor extends AbstractActor {
-    Router router;
-    
+    private Router router;
+
 
     @Override
     public Receive createReceive() {
