@@ -23,7 +23,7 @@ public class ExecutorActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(ExecMessage.class, r ->
-                        sender().tell(new PutMessage(r.getPackID(), execute(r)), getContext().getParent()))
+                        sender().tell(new PutMessage(r.getPackID(), execute(r)), self()))
                 .build();
     }
 }
