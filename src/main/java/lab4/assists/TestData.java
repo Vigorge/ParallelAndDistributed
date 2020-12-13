@@ -1,5 +1,7 @@
 package lab4.assists;
 
-public class TestData {
+import java.io.Serializable;
 
+public class TestData implements Serializable {
+    
 }
