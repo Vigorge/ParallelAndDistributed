@@ -4,8 +4,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.server.Route;
 
-import static akka.http.javadsl.server.Directives.pathPrefix;
-import static akka.http.javadsl.server.Directives.route;
+import static akka.http.javadsl.server.Directives.*;
 
 public class HttpParse {
     private final ActorRef router;
@@ -18,8 +17,7 @@ public class HttpParse {
 
     public Route createRoute() {
         return route(
-                pathPrefix("results", () ->
-                        )
+                get(())
         );
     }
 }
