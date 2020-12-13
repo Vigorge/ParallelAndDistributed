@@ -5,6 +5,12 @@ import akka.actor.ActorSystem;
 
 public class HttpParse {
     private final ActorRef router;
+    private final ActorSystem system;
 
-    public HttpParse(ActorSystem sys)
+    public HttpParse(ActorSystem system, ActorRef router) {
+        this.system = system;
+        this.router = router;
+    }
+
+    
 }
