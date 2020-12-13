@@ -21,7 +21,7 @@ public class HttpParse {
                 get(() -> parameter("packageID", (pID) -> {
 
                 })),
-                post(() -> entity(Jackson.unmarshaller()))
+                post(() -> entity(Jackson.unmarshaller(PackageData.class), msg))
         );
     }
 }
