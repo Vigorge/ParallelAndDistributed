@@ -25,8 +25,8 @@ public class TaskTestingApp {
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         HttpParse instance = new HttpParse(routerActor);
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
-            final CompletionStage<ServerBinding> binding = http.bindAndHandle()
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = instance.createRoute()
+        final CompletionStage<ServerBinding> binding = http.bindAndHandle()
         System.out.printf("Server online at https://%s:%d/\nPress ENTER to stop\n", HOST, PORT);
         System.in.read();
         //binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
