@@ -3,6 +3,7 @@ package lab4.actors;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
+import akka.actor.Terminated;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.ActorRefRoutee;
 import akka.routing.RoundRobinRoutingLogic;
@@ -48,6 +49,7 @@ public class RouterActor extends AbstractActor {
                 .match(GetMessage.class, r ->
                         storage.tell(r, sender())
                         )
+                .match(Terminated.class, t -> )
                 .build();
     }
 }
