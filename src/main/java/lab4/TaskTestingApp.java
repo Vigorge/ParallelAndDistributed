@@ -33,6 +33,6 @@ public class TaskTestingApp {
         );
         System.out.printf("Server online at https://%s:%d/\nPress ENTER to stop\n", HOST, PORT);
         System.in.read();
-        //binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
+        binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
     }
 }
