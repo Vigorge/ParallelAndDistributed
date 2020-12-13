@@ -8,6 +8,7 @@ import akka.routing.ActorRefRoutee;
 import akka.routing.RoundRobinRoutingLogic;
 import akka.routing.Routee;
 import akka.routing.Router;
+import lab4.assists.PackageData;
 import lab4.messages.ExecMessage;
 import lab4.messages.GetMessage;
 import lab4.messages.PutMessage;
@@ -35,8 +36,12 @@ public class RouterActor extends AbstractActor {
 
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(ExecMessage.class, r ->
-                        router.route(r, self()))
+                .match(PackageData.class, r -> {
+                        fo (t : r.getTests()) {
+
+                        }
+                        }
+                        )
                 .match(PutMessage.class, r ->
                         storage.tell(r, self()))
                 .match(GetMessage.class, r ->
