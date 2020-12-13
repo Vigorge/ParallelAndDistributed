@@ -7,6 +7,7 @@ import akka.routing.ActorRefRoutee;
 import akka.routing.RoundRobinRoutingLogic;
 import akka.routing.Routee;
 import akka.routing.Router;
+import lab4.messages.PutMessage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,9 @@ public class RouterActor extends AbstractActor {
     }
 
     public Receive createReceive() {
-        return receiveBuilder()
-                .match()
+        return receiveBuilder().create()
+                .match(PutMessage.class, r ->
+                        storage.tell())
+                .build();
     }
 }
