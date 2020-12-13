@@ -1,6 +1,7 @@
 package lab4.actors;
 
 import akka.actor.AbstractActor;
+import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
 import lab4.asists.GetMessage;
 import lab4.asists.PutMessage;
@@ -25,6 +26,7 @@ public class StorageActor extends AbstractActor {
                         })
                 .match(GetMessage.class, r ->
                         sender().tell(new ResultMessage(r.getPackID(), storage.get(r.getPackID())), self()))
+                .matchAny(o -> System.out.println("Unknown message handled"))
                 .build();
     }
 }
