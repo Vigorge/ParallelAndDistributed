@@ -21,8 +21,9 @@ public class ExecutorActor extends AbstractActor {
             Invocable in = (Invocable) e;
             result = in.invokeFunction(r.getFuncName(), r.getParams()).toString();
         } catch (Exception e) {
-            return e.toString();
+            return "ERROR " + e.toString();
         }
+
         return result;
     }
 
