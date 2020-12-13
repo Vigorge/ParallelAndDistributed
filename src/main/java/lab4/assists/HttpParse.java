@@ -18,7 +18,8 @@ public class HttpParse {
 
     public Route createRoute() {
         return route(
-                pathPrefix("results", () -> )
+                pathPrefix("results", () ->
+                        )
         );
     }
 }
