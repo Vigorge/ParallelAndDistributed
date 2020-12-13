@@ -12,7 +12,8 @@ import javax.script.ScriptEngineManager;
 public class ExecutorActor extends AbstractActor {
 
     private String execute(TestData test) {
-        ScriptEngine e = new ScriptEngineManager().getEngineByName("")
+        ScriptEngine e = new ScriptEngineManager().getEngineByName("nashorn");
+        
     }
 
     public Receive createReceive() {
