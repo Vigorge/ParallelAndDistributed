@@ -6,7 +6,7 @@ import akka.routing.Router;
 
 public class RouterActor extends AbstractActor {
     private Router router;
-    private ActorRef storage = getContext().
+    private ActorRef storage = getContext().actorOf()
 
     @Override
     public Receive createReceive() {
