@@ -49,6 +49,12 @@ Package: `lab3`
     spark-submit --class lab3.CountDelayApp --master yarn-client --num-executors target/PDlabs-1.0.jar airports.csv flights.csv outputLab3
     
 <a name="lab4"><h3>Лабораторная работа 4</h3></a>
-Статус: _в работе_  
+Статус: _ожидает проверки_  
 Цель: _знакомство с Actor based framework_  
+Описание работы:  
+_Программа представляет из себя приложение для тестирования, основанное на AKKA Actor System и позволяющее с помощю HTTP запросов отправлять задачу на тестирование и получать результаты тестов._  
+Package: `lab4`  
+Запуск программы:
+
+	
 
