@@ -13,7 +13,7 @@ public class ExecutorActor extends AbstractActor {
 
     private String execute(TestData test) {
         ScriptEngine e = new ScriptEngineManager().getEngineByName("nashorn");
-        e.eval()
+        e.eval(test.)
     }
 
     public Receive createReceive() {
