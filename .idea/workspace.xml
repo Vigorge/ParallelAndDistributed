@@ -36,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab4/actors/StorageActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="28" column="50" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
+            <state relative-caret-position="576">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,15 +63,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab4/actors/ExecutorActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
+            <state relative-caret-position="198">
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#241#242#0" expanded="true" />
-                <element signature="e#286#287#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,8 +135,8 @@
         <option value="$PROJECT_DIR$/src/main/java/lab4/asists/GetMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab4/asists/PutMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab4/asists/ResultMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lab4/actors/ExecutorActor.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab4/actors/StorageActor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lab4/actors/ExecutorActor.java" />
       </list>
     </option>
   </component>
@@ -280,12 +278,12 @@
       <workItem from="1605461716682" duration="1230000" />
       <workItem from="1605706096386" duration="5470000" />
       <workItem from="1607447609427" duration="3202000" />
-      <workItem from="1607807852938" duration="7516000" />
+      <workItem from="1607807852938" duration="7883000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22272000" />
+    <option name="totallyTimeSpent" value="22639000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="32" width="1920" height="977" extended-state="6" />
@@ -438,18 +436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lab4/actors/ExecutorActor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#241#242#0" expanded="true" />
-            <element signature="e#286#287#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lab4/asists/ResultMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -465,8 +451,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lab4/actors/StorageActor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="50" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
+        <state relative-caret-position="576">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lab4/actors/ExecutorActor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

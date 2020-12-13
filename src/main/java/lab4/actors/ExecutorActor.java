@@ -9,6 +9,7 @@ public class ExecutorActor extends AbstractActor {
 
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                match().build();
+                .match()
+                .build();
     }
 }
