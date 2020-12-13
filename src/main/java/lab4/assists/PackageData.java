@@ -6,7 +6,13 @@ import org.apache.htrace.shaded.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 public class PackageData {
-    private final String packageID, jsScript, functionName;
+    @JsonProperty("packageID")
+    private final String packageID;
+    @JsonProperty("jsScript")
+    private final String jsScript;
+    @JsonProperty("functionName")
+    private final String functionName;
+    @JsonProperty("tests")
     private final ArrayList<TestData> tests;
 
     @JsonCreator
