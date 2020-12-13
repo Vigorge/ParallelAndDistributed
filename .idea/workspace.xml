@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="147351f3-5c0f-433d-b8ee-109e202df302" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab4/actors/ExecutorActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/actors/ExecutorActor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab4/assists/TestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/assists/TestData.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -78,10 +77,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab4/assists/TestData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+            <state relative-caret-position="126">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#767#768#0" expanded="true" />
+                <element signature="e#798#799#0" expanded="true" />
+                <element signature="e#839#840#0" expanded="true" />
+                <element signature="e#876#877#0" expanded="true" />
+                <element signature="e#920#921#0" expanded="true" />
+                <element signature="e#949#950#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -291,12 +296,12 @@
       <workItem from="1605461716682" duration="1230000" />
       <workItem from="1605706096386" duration="5470000" />
       <workItem from="1607447609427" duration="3202000" />
-      <workItem from="1607807852938" duration="10041000" />
+      <workItem from="1607807852938" duration="10332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24797000" />
+    <option name="totallyTimeSpent" value="25088000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="32" width="1920" height="977" extended-state="6" />
@@ -484,10 +489,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lab4/assists/TestData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        <state relative-caret-position="126">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#767#768#0" expanded="true" />
+            <element signature="e#798#799#0" expanded="true" />
+            <element signature="e#839#840#0" expanded="true" />
+            <element signature="e#876#877#0" expanded="true" />
+            <element signature="e#920#921#0" expanded="true" />
+            <element signature="e#949#950#0" expanded="true" />
           </folding>
         </state>
       </provider>
