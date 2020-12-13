@@ -12,7 +12,10 @@ public class TestData implements Serializable {
     private final ArrayList<Object> params;
 
     @JsonCreator
-    public TestData(@JsonProperty("testName") String testName, @JsonProperty("expectedResult") String expectedResult, @JsonProperty("params")ArrayList<Object> params) {
+    public TestData(@JsonProperty("testName") String testName,
+                    @JsonProperty("expectedResult") String expectedResult,
+                    @JsonProperty("params")ArrayList<Object> params)
+    {
         this.testName = testName;
         this.expectedResult = expectedResult;
         this.params = params;
