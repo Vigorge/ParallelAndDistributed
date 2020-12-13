@@ -30,7 +30,7 @@ public class RouterActor extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder().create()
                 .match(ExecMessage.class, r ->
-                        router.route())
+                        router.route(r, sender()))
                 .build();
     }
 }
