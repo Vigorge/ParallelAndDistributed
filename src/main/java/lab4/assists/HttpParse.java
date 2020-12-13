@@ -2,6 +2,7 @@ package lab4.assists;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.server.Route;
 
 import static akka.http.javadsl.server.Directives.*;
@@ -20,7 +21,7 @@ public class HttpParse {
                 get(() -> parameter("packageID", (pID) -> {
 
                 })),
-                post(() -> entity())
+                post(() -> entity(Jackson.unmarshaller()))
         );
     }
 }
