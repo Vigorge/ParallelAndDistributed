@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="147351f3-5c0f-433d-b8ee-109e202df302" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab4/actors/StorageActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/actors/StorageActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab4/TaskTestingApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/TaskTestingApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab4/assists/HttpParse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/assists/HttpParse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab4/messages/GetMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/messages/GetMessage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -16,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab4/TaskTestingApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="450">
+              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -31,16 +30,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab4/assists/HttpParse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="558">
+              <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#580#581#0" expanded="true" />
+                <element signature="e#616#617#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab4/messages/GetMessage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
@@ -181,7 +182,6 @@
         <option value="$PROJECT_DIR$/src/main/java/lab2/AirportApp.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/lab3/CountDelayApp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lab4/TaskTestingApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab4/asists/TestResults.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab4/asists/TestData.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab4/asists/GetMessage.java" />
@@ -193,8 +193,9 @@
         <option value="$PROJECT_DIR$/src/main/java/lab4/actors/ExecutorActor.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab4/actors/RouterActor.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab4/actors/StorageActor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lab4/assists/HttpParse.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab4/messages/GetMessage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lab4/assists/HttpParse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lab4/TaskTestingApp.java" />
       </list>
     </option>
   </component>
@@ -278,15 +279,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="lab4" type="462c0819:PsiDirectoryNode" />
-              <item name="assists" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ParallelAndDistributed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ParallelAndDistributed" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lab4" type="462c0819:PsiDirectoryNode" />
               <item name="messages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -345,18 +337,18 @@
       <workItem from="1605461716682" duration="1230000" />
       <workItem from="1605706096386" duration="5470000" />
       <workItem from="1607447609427" duration="3202000" />
-      <workItem from="1607807852938" duration="23260000" />
+      <workItem from="1607807852938" duration="23649000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38016000" />
+    <option name="totallyTimeSpent" value="38405000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="32" width="1920" height="977" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17650215" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20010729" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -500,16 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lab4/TaskTestingApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lab4/messages/ResultMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -560,20 +542,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lab4/assists/HttpParse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lab4/messages/GetMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lab4/assists/HttpParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#616#617#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lab4/TaskTestingApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
