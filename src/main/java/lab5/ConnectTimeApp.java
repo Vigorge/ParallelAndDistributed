@@ -48,7 +48,7 @@ public class ConnectTimeApp {
                                 return CompletableFuture.completedFuture(new Pair<>(p.first(), (float) t));
                             Flow<Pair<String, Integer>, Float, NotUsed> f =
                                     Flow.<Pair<String, Integer>>create()
-                                    .mapConcat(p -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(p.second(), p.first())))
+                                    .mapConcat(pr -> new ArrayList<>(Collections.nCopies(pr.second(), pr.first())))
                                     .mapAsync()
                                 }))
                 .map();
