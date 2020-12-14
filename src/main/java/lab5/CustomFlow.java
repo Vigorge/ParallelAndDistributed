@@ -17,7 +17,7 @@ import java.time.Duration;
 
 import static akka.http.javadsl.server.Directives.*;
 
-public class CustomFlow {
+public class CustomFlow<HttpRequest, HttpResponse, NotUsed> extends Flow {
     private final ActorRef router;
     private final static Timeout TIMEOUT = Timeout.create(Duration.ofSeconds(5));
 
