@@ -16,8 +16,6 @@ import akka.japi.Pair;
 import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
-import akka.util.Timeout;
-import org.asynchttpclient.AsyncHttpClient;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -25,6 +23,7 @@ import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
+import org.asynchttpclient.AsyncHttpClient;
 import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 public class ConnectTimeApp {
