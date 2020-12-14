@@ -9,6 +9,7 @@ import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
+import akka.http.javadsl.model.Query;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
@@ -22,7 +23,10 @@ public class ConnectTimeApp {
 
     private static Flow<HttpRequest, HttpResponse, NotUsed> createFlow(ActorMaterializer materializer, ActorRef casher) {
         return Flow.of(HttpRequest.class)
-                .map()
+                .map((r) -> {
+                    Query query = r.getUri().query();
+                    String url = query.getOrElse()
+                        })
                 .mapAsync()
                 .map();
     }
