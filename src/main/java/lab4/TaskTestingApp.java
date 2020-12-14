@@ -4,6 +4,8 @@ import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
+import akka.event.Logging;
+import akka.event.LoggingAdapter;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
@@ -34,6 +36,9 @@ public class TaskTestingApp {
                 materializer
         );
         System.out.printf("Server online at https://%s:%d/\n", HOST, PORT);
+        LoggingAdapter l = Logging.getLogger(system, System.out);
+        l.info("Server online at https://{}:{}/\n", HOST, PORT);
+
         System.in.read();
         binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
     }
