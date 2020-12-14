@@ -13,7 +13,6 @@ import java.util.*;
 public class StorageActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
 
-
     private Map<String, ArrayList<String>> storage = new HashMap<>();
 
     public Receive createReceive() {
@@ -30,7 +29,7 @@ public class StorageActor extends AbstractActor {
                         })
                 .match(GetMessage.class, r ->
                         sender().tell(new ResultMessage(r.getPackID(), storage.get(r.getPackID())), getContext().parent()))
-                .matchAny(o -> System.out.println("Unknown message handled"))
+                .matchAny(o -> log.info("recieved unknown message"))
                 .build();
     }
 }
