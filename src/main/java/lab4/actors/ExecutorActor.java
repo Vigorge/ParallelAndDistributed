@@ -1,6 +1,8 @@
 package lab4.actors;
 
 import akka.actor.AbstractActor;
+import akka.event.Logging;
+import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
 import lab4.messages.ExecMessage;
 import lab4.messages.PutMessage;
@@ -10,6 +12,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
 public class ExecutorActor extends AbstractActor {
+    private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
 
     private String execute(ExecMessage r) {
         String result;
@@ -31,7 +34,7 @@ public class ExecutorActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(ExecMessage.class, r ->
                         sender().tell(new PutMessage(r.getPackID(), execute(r)), self()))
-                
+
                 .build();
     }
 }
