@@ -10,6 +10,7 @@ import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.model.Query;
+import akka.japi.Pair;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
@@ -19,13 +20,16 @@ public class ConnectTimeApp {
     private static final int PORT = 8088;
     private static final String HOST = "localhost";
     private static final String SYS_NAME = "webtimet";
-
+    private static final String URL = "connect";
+    private static final String COUNT = "repeat";
 
     private static Flow<HttpRequest, HttpResponse, NotUsed> createFlow(ActorMaterializer materializer, ActorRef casher) {
         return Flow.of(HttpRequest.class)
                 .map((r) -> {
                     Query query = r.getUri().query();
-                    String url = query.getOrElse()
+                    String url = query.getOrElse(URL, HOST);
+                    int count = Integer.parseInt(query.getOrElse(COUNT, "0"));
+                    return new Pair<>(url, count);
                         })
                 .mapAsync()
                 .map();
