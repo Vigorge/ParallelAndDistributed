@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 public class ExecMessage {
     private final String packID, funcName, jsScript, testName, expRes;
-    private final ArrayList<Integer> params;
+    private final ArrayList<Object> params;
 
-    public ExecMessage(String packID, String funcName, String jsScript, String testName, String expRes, ArrayList<Integer> params) {
+    public ExecMessage(String packID, String funcName, String jsScript, String testName, String expRes, ArrayList<Object> params) {
         this.packID = packID;
         this.funcName = funcName;
         this.jsScript = jsScript;
@@ -29,7 +29,7 @@ public class ExecMessage {
         return jsScript;
     }
 
-    public ArrayList<Integer> getParams() {
+    public ArrayList<Object> getParams() {
         return params;
     }
 
