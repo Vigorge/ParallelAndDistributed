@@ -11,8 +11,6 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
-import lab4.actors.RouterActor;
-import lab4.assists.HttpParse;
 
 import java.util.concurrent.CompletionStage;
 
@@ -21,7 +19,6 @@ public class ConnectTimeApp {
     private static final String HOST = "localhost";
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("webtest");
-        ActorRef routerActor = system.actorOf(Props.create(RouterActor.class), "router");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         HttpParse instance = new HttpParse(routerActor);
