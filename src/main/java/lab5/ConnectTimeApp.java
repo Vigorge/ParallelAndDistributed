@@ -40,44 +40,6 @@ public class ConnectTimeApp {
     private static final Object LOG_SOURCE = System.out;
     private static LoggingAdapter l;
 
-    private static Flow<HttpRequest, HttpResponse, NotUsed> createFlow(ActorMaterializer materializer, ActorRef casher) {
-        return Flow.of(HttpRequest.class)
-                .map((r) -> {
-                    Query query = r.getUri().query();
-                    String url = query.getOrElse(URL, HOST);
-                    int count = Integer.parseInt(query.getOrElse(COUNT, "1"));
-                    return new Pair<>(url, count);
-                        })
-                .mapAsync(2, (Pair<String, Integer> p) ->
-                        Patterns.ask(casher, p.first(), TIMEOUT).thenCompose((Object t) -> {
-                            if ((float) t >= 0)
-                                return CompletableFuture.completedFuture(new Pair<>(p.first(), (float)t));
-                            Sink<Pair<String, Integer>, CompletionStage<Long>> s =
-                                    Flow.<Pair<String, Integer>>create()
-                                    .mapConcat(pr -> new ArrayList<>(Collections.nCopies(pr.second(), pr.first())))
-                                    .mapAsync(p.second(), (String url) -> {
-                                        AsyncHttpClient client = asyncHttpClient();
-                                        long startTime = System.currentTimeMillis();
-                                        client.prepareGet(url).execute();
-                                        long resultTime = startTime - System.currentTimeMillis();
-                                        l.info("Connected to {} within {}", p.first(), resultTime);
-                                        return CompletableFuture.completedFuture(resultTime);
-                                    })
-                                    .toMat(Sink.fold(0L, Long::sum), Keep.right());
-                            return Source.from(Collections.singletonList(p))
-                                    .toMat(s, Keep.right())
-                                    .run(materializer)
-                                    .thenApply(time -> {
-                                        l.info("Average time for {} counted: {}", p.first(), (float)time/p.second());
-                                        return new Pair<>(p.first(), (float)time/p.second());
-                                    });
-                                }))
-                .map((r) -> {
-                    casher.tell(new StoreMessage(r.first(), r.second()), ActorRef.noSender());
-                    return HttpResponse.create().withEntity(r.first() + ": " + r.second() + "\n");
-                });
-    }
-
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create(SYS_NAME);
         ActorRef casherActor = system.actorOf(Props.create(CasherActor.class), "cash");
@@ -95,4 +57,43 @@ public class ConnectTimeApp {
         binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
     }
 
+    private static Flow<HttpRequest, HttpResponse, NotUsed> createFlow(ActorMaterializer materializer, ActorRef casher) {
+        return Flow.of(HttpRequest.class)
+                .map((r) -> {
+                    Query query = r.getUri().query();
+                    String url = query.getOrElse(URL, HOST);
+                    int count = Integer.parseInt(query.getOrElse(COUNT, "1"));
+                    return new Pair<>(url, count);
+                        })
+                .mapAsync(2, (Pair<String, Integer> p) ->
+                        Patterns.ask(casher, p.first(), TIMEOUT).thenCompose((Object t) -> {
+                            if ((float) t >= 0)
+                                return CompletableFuture.completedFuture(new Pair<>(p.first(), (float)t));
+                            return Source.from(Collections.singletonList(p))
+                                    .toMat(formSink(p.second()), Keep.right())
+                                    .run(materializer)
+                                    .thenApply(time -> {
+                                        l.info("Average time for {} counted: {}", p.first(), (float)time/p.second());
+                                        return new Pair<>(p.first(), (float)time/p.second());
+                                    });
+                                }))
+                .map((r) -> {
+                    casher.tell(new StoreMessage(r.first(), r.second()), ActorRef.noSender());
+                    return HttpResponse.create().withEntity(r.first() + ": " + r.second() + "\n");
+                });
+    }
+
+    private static Sink<Pair<String, Integer>, CompletionStage<Long>> formSink(int reqAmmount) {
+        return Flow.<Pair<String, Integer>>create()
+                .mapConcat(pr -> new ArrayList<>(Collections.nCopies(pr.second(), pr.first())))
+                .mapAsync(reqAmmount, (String url) -> {
+                    AsyncHttpClient client = asyncHttpClient();
+                    long startTime = System.currentTimeMillis();
+                    client.prepareGet(url).execute();
+                    long resultTime = startTime - System.currentTimeMillis();
+                    l.info("Connected to {} within {} milliseconds", url, resultTime);
+                    return CompletableFuture.completedFuture(resultTime);
+                })
+                .toMat(Sink.fold(0L, Long::sum), Keep.right());
+    }
 }
