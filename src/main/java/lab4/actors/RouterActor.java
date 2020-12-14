@@ -4,6 +4,8 @@ import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.actor.Terminated;
+import akka.event.Logging;
+import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.ActorRefRoutee;
 import akka.routing.RoundRobinRoutingLogic;
@@ -22,6 +24,8 @@ public class RouterActor extends AbstractActor {
     private ActorRef storage;
 
     public RouterActor() {
+        private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
+
         storage = getContext().actorOf(Props.create(StorageActor.class), "storage");
         getContext().watch(storage);
 
