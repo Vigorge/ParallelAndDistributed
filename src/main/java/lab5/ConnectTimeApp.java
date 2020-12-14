@@ -73,13 +73,13 @@ public class ConnectTimeApp {
                                     .toMat(formSink(p.second()), Keep.right())
                                     .run(materializer)
                                     .thenApply(time -> {
-                                        l.info("Average time for {} counted: {}", p.first(), (float)time/p.second());
+                                        l.info("Average time for {}: {}", p.first(), (float)time/p.second());
                                         return new Pair<>(p.first(), (float)time/p.second());
                                     });
                                 }))
                 .map((r) -> {
                     casher.tell(new StoreMessage(r.first(), r.second()), ActorRef.noSender());
-                    return HttpResponse.create().withEntity(r.first() + ": " + r.second() + "\n");
+                    return HttpResponse.create().withEntity("Result: " + r.first() + ": " + r.second() + "\n");
                 });
     }
 
@@ -90,7 +90,7 @@ public class ConnectTimeApp {
                     AsyncHttpClient client = asyncHttpClient();
                     long startTime = System.currentTimeMillis();
                     client.prepareGet(url).execute();
-                    long resultTime = startTime - System.currentTimeMillis();
+                    long resultTime = System.currentTimeMillis() - startTime;
                     l.info("Connected to {} within {} milliseconds", url, resultTime);
                     return CompletableFuture.completedFuture(resultTime);
                 })
