@@ -12,7 +12,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
 public class ExecutorActor extends AbstractActor {
-    private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
+    private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
 
     private String execute(ExecMessage r) {
         String result;
@@ -34,7 +34,7 @@ public class ExecutorActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(ExecMessage.class, r ->
                         sender().tell(new PutMessage(r.getPackID(), execute(r)), self()))
-
+                .matchAny(o -> log.info())
                 .build();
     }
 }
