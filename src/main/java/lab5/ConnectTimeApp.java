@@ -21,7 +21,7 @@ public class ConnectTimeApp {
     private static Flow<HttpRequest, HttpResponse, NotUsed> createFlow(ActorMaterializer materializer, ActorRef casher) {
         return Flow.of(HttpRequest.class)
                 .map()
-                .mapAsync()
+                .mapAsync();
     }
 
     public static void main(String[] args) throws Exception {
