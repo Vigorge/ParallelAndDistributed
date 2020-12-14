@@ -1,9 +1,7 @@
 package lab5;
 
 import akka.NotUsed;
-import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
-import akka.actor.Props;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
@@ -19,10 +17,11 @@ public class ConnectTimeApp {
     private static final String HOST = "localhost";
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("webtest");
+        //ActorRef routerActor = system.actorOf(Props.create(RouterActor.class), "cash");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        HttpParse instance = new HttpParse(routerActor);
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = instance.createRoute().flow(system, materializer);
+        CustomFlow instance = new CustomFlow(routerActor);
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = instance.createRoute(materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost(HOST, PORT),
