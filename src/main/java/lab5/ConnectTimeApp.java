@@ -32,10 +32,12 @@ public class ConnectTimeApp {
                 .map((r) -> {
                     Query query = r.getUri().query();
                     String url = query.getOrElse(URL, HOST);
-                    int count = Integer.parseInt(query.getOrElse(COUNT, "0"));
+                    long count = Long.parseLong(query.getOrElse(COUNT, "0"));
                     return new Pair<>(url, count);
                         })
-                .mapAsync()
+                .mapAsync(5, (Pair<String, Long> p) -> {
+                    
+                })
                 .map();
     }
 
