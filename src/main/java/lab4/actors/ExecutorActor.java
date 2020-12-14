@@ -34,7 +34,7 @@ public class ExecutorActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(ExecMessage.class, r ->
                         sender().tell(new PutMessage(r.getPackID(), execute(r)), self()))
-                .matchAny(o -> log.info())
+                .matchAny(o -> log.info(""))
                 .build();
     }
 }
