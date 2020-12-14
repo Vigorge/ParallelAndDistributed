@@ -12,25 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lab4/assists/HttpParse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#580#581#0" expanded="true" />
-                <element signature="e#616#617#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab4/TaskTestingApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="26" column="6" lean-forward="true" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+            <state relative-caret-position="612">
+              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -257,41 +243,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ParallelAndDistributed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ParallelAndDistributed" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lab4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ParallelAndDistributed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ParallelAndDistributed" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lab4" type="462c0819:PsiDirectoryNode" />
-              <item name="actors" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ParallelAndDistributed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ParallelAndDistributed" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lab4" type="462c0819:PsiDirectoryNode" />
-              <item name="assists" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ParallelAndDistributed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ParallelAndDistributed" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lab4" type="462c0819:PsiDirectoryNode" />
-              <item name="messages" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -348,16 +299,15 @@
       <workItem from="1605461716682" duration="1230000" />
       <workItem from="1605706096386" duration="5470000" />
       <workItem from="1607447609427" duration="3202000" />
-      <workItem from="1607807852938" duration="32675000" />
+      <workItem from="1607807852938" duration="33320000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47431000" />
+    <option name="totallyTimeSpent" value="48076000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="32" width="1920" height="977" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20010729" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -577,10 +527,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lab5.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lab4/TaskTestingApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="6" lean-forward="true" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+        <state relative-caret-position="612">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
