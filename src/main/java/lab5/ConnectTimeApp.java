@@ -19,7 +19,9 @@ public class ConnectTimeApp {
     private static final String HOST = "localhost";
 
     private static Flow<HttpRequest, HttpResponse, NotUsed> createFlow(ActorMaterializer materializer, ActorRef casher) {
-        return
+        return Flow.of(HttpRequest.class)
+                .map()
+                .mapAsync()
     }
 
     public static void main(String[] args) throws Exception {
