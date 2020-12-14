@@ -39,7 +39,9 @@ public class ConnectTimeApp {
                     long count = Long.parseLong(query.getOrElse(COUNT, "0"));
                     return new Pair<>(url, count);
                         })
-                .mapAsync(5, (Pair<String, Long> p) -> Patterns.ask(CasherActor, p.first(), ))
+                .mapAsync(5, (Pair<String, Long> p) ->
+                        Patterns.ask(casher, p.first(), TIMEOUT)
+                        .thenCompose)
                 .map();
     }
 
