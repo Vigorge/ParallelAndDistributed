@@ -11,6 +11,7 @@ import java.util.Map;
 
 public class CasherActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
+
     private final Map<String, Float> cash = new HashMap<>();
 
     public Receive createReceive() {
