@@ -22,6 +22,7 @@ public class TaskTestingApp {
     private static final int PORT = 8088;
     private static final String HOST = "localhost";
     private static final String SYS_NAME = "webtest";
+    private static final Object LOG_SOURCE = System.out;
 
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create(SYS_NAME);
