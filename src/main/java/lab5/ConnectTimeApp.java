@@ -13,9 +13,12 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.model.Query;
 import akka.japi.Pair;
+import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import akka.util.Timeout;
 
+import java.time.Duration;
 import java.util.concurrent.CompletionStage;
 
 public class ConnectTimeApp {
@@ -24,6 +27,7 @@ public class ConnectTimeApp {
     private static final String SYS_NAME = "webtimet";
     private static final String URL = "connect";
     private static final String COUNT = "repeat";
+    private final static Timeout TIMEOUT = Timeout.create(Duration.ofSeconds(5));
     private static final Object LOG_SOURCE = System.out;
     private static LoggingAdapter l;
 
@@ -35,9 +39,7 @@ public class ConnectTimeApp {
                     long count = Long.parseLong(query.getOrElse(COUNT, "0"));
                     return new Pair<>(url, count);
                         })
-                .mapAsync(5, (Pair<String, Long> p) -> {
-                    
-                })
+                .mapAsync(5, (Pair<String, Long> p) -> Patterns.ask(CasherActor, p.first(), ))
                 .map();
     }
 
