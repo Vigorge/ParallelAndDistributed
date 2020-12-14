@@ -26,6 +26,7 @@ public class TaskTestingApp {
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create(SYS_NAME);
         ActorRef routerActor = system.actorOf(Props.create(RouterActor.class), "router");
+        LoggingAdapter l = Logging.getLogger(system, System.out);
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         HttpParse instance = new HttpParse(routerActor);
@@ -35,10 +36,7 @@ public class TaskTestingApp {
                 ConnectHttp.toHost(HOST, PORT),
                 materializer
         );
-        System.out.printf("Server online at https://%s:%d/\n", HOST, PORT);
-        LoggingAdapter l = Logging.getLogger(system, System.out);
         l.info("Server online at https://{}:{}/\n", HOST, PORT);
-
         System.in.read();
         binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
     }

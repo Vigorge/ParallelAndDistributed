@@ -1,9 +1,11 @@
 lab1/WordMapper.class
 lab3/functions/ModDelInfo.class
+lab5/CasherActor.class
 lab4/TaskTestingApp.class
 lab4/messages/ResultMessage.class
 lab2/AirportApp.class
 lab2/mapreduce/AirportsJoinMapper.class
+lab5/StoreMessage.class
 lab3/serializable/TableRowData.class
 lab4/assists/PackageData.class
 lab4/actors/ExecutorActor.class
@@ -13,6 +15,7 @@ lab4/messages/PutMessage.class
 lab4/messages/ExecMessage.class
 lab4/actors/RouterActor.class
 lab4/actors/StorageActor.class
+lab5/ConnectTimeApp.class
 lab2/dataformats/DelayData.class
 lab2/mapreduce/JoinReducer.class
 lab3/serializable/FlightStats.class
