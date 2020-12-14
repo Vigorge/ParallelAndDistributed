@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="147351f3-5c0f-433d-b8ee-109e202df302" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab4/actors/StorageActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/actors/StorageActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab5/StoreMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab5/StoreMessage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -59,16 +59,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab5/StoreMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="108">
+              <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab4/actors/StorageActor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="233">
@@ -164,8 +164,8 @@
         <option value="$PROJECT_DIR$/src/main/java/lab5/CustomFlow.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab5/ConnectTimeApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab5/CasherActor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lab5/StoreMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab4/actors/StorageActor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lab5/StoreMessage.java" />
       </list>
     </option>
   </component>
@@ -324,12 +324,12 @@
       <workItem from="1605461716682" duration="1230000" />
       <workItem from="1605706096386" duration="5470000" />
       <workItem from="1607447609427" duration="3202000" />
-      <workItem from="1607807852938" duration="37856000" />
+      <workItem from="1607807852938" duration="37928000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52612000" />
+    <option name="totallyTimeSpent" value="52684000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="32" width="1920" height="977" extended-state="6" />
@@ -590,13 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lab5/StoreMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lab4/actors/StorageActor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
@@ -604,6 +597,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lab5/StoreMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
         </state>
       </provider>
     </entry>
