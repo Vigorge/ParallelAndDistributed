@@ -57,16 +57,20 @@ public class ConnectTimeApp {
                                     .mapConcat(pr -> new ArrayList<>(Collections.nCopies(pr.second(), pr.first())))
                                     .mapAsync(p.second(), (String url) -> {
                                         AsyncHttpClient client = asyncHttpClient();
-                                        long start = System.currentTimeMillis();
+                                        long startTime = System.currentTimeMillis();
                                         client.prepareGet(url).execute();
-                                        return CompletableFuture.completedFuture(start - System.currentTimeMillis());
+                                        long resultTime = startTime - System.currentTimeMillis();
+                                        l.info("Connected to {} within {}", p.first(), resultTime);
+                                        return CompletableFuture.completedFuture(resultTime);
                                     })
                                     .toMat(Sink.fold(0L, Long::sum), Keep.right());
                             return Source.from(Collections.singletonList(p))
                                     .toMat(s, Keep.right())
                                     .run(materializer)
-                                    .thenApply(time -> new Pair<>(p.first(), (float)time/p.second())
-                                    );
+                                    .thenApply(time -> {
+                                        l.info("Average time for {} counted: {}", p.first(), (float)time/p.second());
+                                        return new Pair<>(p.first(), (float)time/p.second());
+                                    });
                                 }))
                 .map((r) -> {
                     casher.tell(new StoreMessage(r.first(), r.second()), ActorRef.noSender());
