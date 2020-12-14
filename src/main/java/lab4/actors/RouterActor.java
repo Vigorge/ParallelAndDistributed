@@ -27,7 +27,7 @@ public class RouterActor extends AbstractActor {
     private ActorRef storage;
     private static SupervisorStrategy strategy =
             new OneForOneStrategy(MAX_RETRIES, DURATION,
-                    DeciderBuilder.matchAny(Exception))
+                    DeciderBuilder.matchAny(o))
 
 
     public RouterActor() {
