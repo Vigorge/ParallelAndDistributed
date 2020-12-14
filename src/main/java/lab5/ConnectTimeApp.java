@@ -4,6 +4,8 @@ import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
+import akka.event.Logging;
+import akka.event.LoggingAdapter;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
@@ -38,6 +40,8 @@ public class ConnectTimeApp {
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create(SYS_NAME);
         ActorRef casherActor = system.actorOf(Props.create(CasherActor.class), "cash");
+        LoggingAdapter l = Logging.getLogger(system, System.out);
+
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = createFlow(materializer, casherActor);
