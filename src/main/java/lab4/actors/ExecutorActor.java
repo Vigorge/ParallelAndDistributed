@@ -15,7 +15,7 @@ public class ExecutorActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
 
     private String execute(ExecMessage r) {
-        String result, responce;
+        String result;
         try {
             ScriptEngine e = new ScriptEngineManager().getEngineByName("nashorn");
             e.eval(r.getJsScript());
@@ -28,14 +28,15 @@ public class ExecutorActor extends AbstractActor {
             return String.format("%s: OK, result: %s", r.getTestName(), result);
         else
             return String.format("%s: FAIL, expected: %s, got: %s", r.getTestName(), r.getExpRes(), result);
-
     }
 
+    private void sendToStorage(ExecMessage r) {
+        sender().tell(new PutMessage(r.getPackID(), execute(r)), self());
+    }
 
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(ExecMessage.class, r ->
-                        sender().tell(new PutMessage(r.getPackID(), execute(r)), self()))
+                .match(ExecMessage.class, this::sendToStorage)
                 .matchAny(o -> log.info("recieved unknown message"))
                 .build();
     }
