@@ -67,7 +67,12 @@ Package: `lab4`
 Описание работы:  
 _Программа, основываясь на AKKA streams, позволяет подсчитать среднее время обращения к сайту, а также поддерживает кэширование запросов._
 Package: `lab4`  
+Запуск программы:
 
+	mvn compile
+	mvn exec:java -Dexec.mainClass="lab5.ConnectTimeApp"
+	//далее обращение к серверу с помощью curl, например:
+	curl -X GET 'http://localhost:8088/?connect=http://rambler.ru&repeat=20'
 
 <a name="lab6"><h3>Лабораторная работа 6</h3></a>
 Статус: _в работе_  
