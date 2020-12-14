@@ -1,9 +1,6 @@
 package lab4.actors;
 
-import akka.actor.AbstractActor;
-import akka.actor.ActorRef;
-import akka.actor.Props;
-import akka.actor.Terminated;
+import akka.actor.*;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
@@ -25,7 +22,7 @@ public class RouterActor extends AbstractActor {
 
     private Router router;
     private ActorRef storage;
-    
+    private static SupervisorStrategy
 
 
     public RouterActor() {
