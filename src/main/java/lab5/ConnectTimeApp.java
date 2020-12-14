@@ -19,6 +19,7 @@ import akka.stream.javadsl.Flow;
 import akka.util.Timeout;
 
 import java.time.Duration;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
 public class ConnectTimeApp {
@@ -40,8 +41,11 @@ public class ConnectTimeApp {
                     return new Pair<>(url, count);
                         })
                 .mapAsync(5, (Pair<String, Long> p) ->
-                        Patterns.ask(casher, p.first(), TIMEOUT).thenCompose((Object t) ->
-                                ))
+                        Patterns.ask(casher, p.first(), TIMEOUT).thenCompose((Object t) -> {
+                            if ((Float) t >= 0)
+                                return CompletableFuture.completedFuture(new Pair<>(p.first(), (Float) t));
+                            
+                                }))
                 .map();
     }
 
