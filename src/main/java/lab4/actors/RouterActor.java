@@ -22,7 +22,7 @@ public class RouterActor extends AbstractActor {
 
     private Router router;
     private ActorRef storage;
-    private static SupervisorStrategy =
+    private static SupervisorStrategy strategy =
             new OneForOneStrategy()
 
 
