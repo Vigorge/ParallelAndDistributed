@@ -9,6 +9,7 @@ import akka.event.LoggingAdapter;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
+import akka.http.javadsl.model.HttpEntities;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.model.Query;
@@ -44,7 +45,7 @@ public class ConnectTimeApp {
                 .map((r) -> {
                     Query query = r.getUri().query();
                     String url = query.getOrElse(URL, HOST);
-                    int count = Integer.parseInt(query.getOrElse(COUNT, "0"));
+                    int count = Integer.parseInt(query.getOrElse(COUNT, "1"));
                     return new Pair<>(url, count);
                         })
                 .mapAsync(2, (Pair<String, Integer> p) ->
@@ -64,11 +65,12 @@ public class ConnectTimeApp {
                             return Source.from(Collections.singletonList(p))
                                     .toMat(s, Keep.right())
                                     .run(materializer)
-                                    .thenApply(time -> new Pair<>(p.first(), (float)time / (float)p.second())
+                                    .thenApply(time -> new Pair<>(p.first(), (float)time/p.second())
                                     );
                                 }))
                 .map((r) -> {
-                    cash
+                    casher.tell(new StoreMessage(r.first(), r.second()), ActorRef.noSender());
+                    return HttpResponse.create().withEntity(r.first() + ": " + r.second() + "\n");
                 });
     }
 
