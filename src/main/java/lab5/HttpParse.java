@@ -5,8 +5,6 @@ import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import akka.util.Timeout;
-import lab4.assists.PackageData;
-import lab4.messages.GetMessage;
 import scala.concurrent.Future;
 
 import java.time.Duration;
@@ -24,12 +22,6 @@ public class HttpParse {
     public Route createRoute() {
         return route(
                 get(() -> parameter("packageID", (pID) -> {
-                    Future<Object> future = Patterns.ask(router, new GetMessage(pID), TIMEOUT);
-                    return completeOKWithFuture(future, Jackson.marshaller());
-                })),
-                post(() -> entity(Jackson.unmarshaller(PackageData.class), msg -> {
-                    router.tell(msg, ActorRef.noSender());
-                    return complete("Tests executed and stored");
                 }))
         );
     }
