@@ -13,6 +13,7 @@ import lab4.assists.TestData;
 import lab4.messages.ExecMessage;
 import lab4.messages.GetMessage;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class RouterActor extends AbstractActor {
     private Router router;
     private ActorRef storage;
     private static SupervisorStrategy strategy =
-            new OneForOneStrategy(MAX_RETRIES, )
+            new OneForOneStrategy(MAX_RETRIES, Duration.between())
 
 
     public RouterActor() {
