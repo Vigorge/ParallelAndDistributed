@@ -23,6 +23,8 @@ import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
+import akka.stream.javadsl.Keep;
+import akka.stream.javadsl.Sink;
 import org.asynchttpclient.AsyncHttpClient;
 import static org.asynchttpclient.Dsl.asyncHttpClient;
 
@@ -48,12 +50,17 @@ public class ConnectTimeApp {
                         Patterns.ask(casher, p.first(), TIMEOUT).thenCompose((Object t) -> {
                             if ((float) t >= 0)
                                 return CompletableFuture.completedFuture(new Pair<>(p.first(), (float) t));
-                            Flow<Pair<String, Integer>, Float, NotUsed> f =
+                            Sink<Pair<String, Integer>, CompletionStage<Long>> f =
                                     Flow.<Pair<String, Integer>>create()
                                     .mapConcat(pr -> new ArrayList<>(Collections.nCopies(pr.second(), pr.first())))
                                     .mapAsync(p.second(), (String url) -> {
-                                        AsyncHttpClient client = asyncHttpClient()
+                                        AsyncHttpClient client = asyncHttpClient();
+                                        long start = System.currentTimeMillis();
+                                        client.prepareGet(url).execute();
+                                        return CompletableFuture.completedFuture(start - System.currentTimeMillis());
                                     })
+                                    .toMat(Sink.fold(0L, Long::sum), Keep.right());
+
                                 }))
                 .map();
     }
