@@ -15,7 +15,7 @@ public class ExecutorActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
 
     private String execute(ExecMessage r) {
-        String result;
+        String result, responce;
         try {
             ScriptEngine e = new ScriptEngineManager().getEngineByName("nashorn");
             e.eval(r.getJsScript());
@@ -28,7 +28,9 @@ public class ExecutorActor extends AbstractActor {
             return String.format("%s: OK, result: %s", r.getTestName(), result);
         else
             return String.format("%s: FAIL, expected: %s, got: %s", r.getTestName(), r.getExpRes(), result);
+
     }
+
 
     public Receive createReceive() {
         return ReceiveBuilder.create()

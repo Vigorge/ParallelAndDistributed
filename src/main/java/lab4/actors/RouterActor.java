@@ -38,18 +38,18 @@ public class RouterActor extends AbstractActor {
         router = new Router(new RoundRobinRoutingLogic(), routees);
     }
 
+    private void executeTests(PackageData r) {
+        for (TestData t : r.getTests()) {
+            router.route(new ExecMessage(r.getPackageID(), r.getFunctionName(),
+                    r.getJsScript(), t.getTestName(), t.getExpectedResult(),
+                    t.getParams()), storage);
+        }
+    }
+
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(PackageData.class, r -> {
-                        for (TestData t : r.getTests()) {
-                            router.route(new ExecMessage(r.getPackageID(), r.getFunctionName(),
-                                        r.getJsScript(), t.getTestName(), t.getExpectedResult(),
-                                        t.getParams()), storage);
-                        }
-                        }
-                        )
-                .match(GetMessage.class, r ->
-                        storage.tell(r, sender()))
+                .match(PackageData.class, this::executeTests)
+                .match(GetMessage.class, r -> storage.tell(r, sender()))
                 .matchAny(o -> log.info("recieved unknown message"))
                 .build();
     }
