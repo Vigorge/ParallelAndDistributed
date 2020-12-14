@@ -15,20 +15,25 @@ public class StorageActor extends AbstractActor {
 
     private Map<String, ArrayList<String>> storage = new HashMap<>();
 
+    private void store(PutMessage r) {
+        ArrayList<String>  results = storage.get(r.getPackID());
+        if (results != null) {
+            results.add(r.getResult());
+        } else {
+            results = new ArrayList<>();
+            results.add(r.getResult());
+            storage.put(r.getPackID(), results);
+        }
+    }
+
+    private void sendResult(GetMessage r) {
+        sender().tell(new ResultMessage(r.getPackID(), storage.get(r.getPackID())), getContext().parent());
+    }
+
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(PutMessage.class, r -> {
-                        ArrayList<String>  results = storage.get(r.getPackID());
-                        if (results != null) {
-                            results.add(r.getResult());
-                        } else {
-                            results = new ArrayList<>();
-                            results.add(r.getResult());
-                            storage.put(r.getPackID(), results);
-                        }
-                        })
-                .match(GetMessage.class, r ->
-                        sender().tell(new ResultMessage(r.getPackID(), storage.get(r.getPackID())), getContext().parent()))
+                .match(PutMessage.class, this::store)
+                .match(GetMessage.class, this::sendResult)
                 .matchAny(o -> log.info("recieved unknown message"))
                 .build();
     }
