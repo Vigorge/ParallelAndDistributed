@@ -17,7 +17,7 @@ public class CasherActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(String.class, r ->
-                        sender().tell(cash.getOrDefault(r, float), ActorRef.noSender()))
+                        sender().tell(cash.getOrDefault(r, (float)-1.0), ActorRef.noSender()))
                 .match(StoreMessage.class, r ->
                         cash.put(r.getUrl(), r.getAvgTime()))
                 .matchAny(o -> log.info("recieved unknown message"))
