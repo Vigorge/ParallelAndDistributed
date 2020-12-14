@@ -3,6 +3,7 @@ package lab4.actors;
 import akka.actor.*;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
+import akka.japi.pf.DeciderBuilder;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.ActorRefRoutee;
 import akka.routing.RoundRobinRoutingLogic;
@@ -25,7 +26,8 @@ public class RouterActor extends AbstractActor {
     private Router router;
     private ActorRef storage;
     private static SupervisorStrategy strategy =
-            new OneForOneStrategy(MAX_RETRIES, DURATION,)
+            new OneForOneStrategy(MAX_RETRIES, DURATION,
+                    DeciderBuilder)
 
 
     public RouterActor() {
