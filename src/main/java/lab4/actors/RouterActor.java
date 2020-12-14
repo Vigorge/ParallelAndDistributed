@@ -20,12 +20,12 @@ import java.util.List;
 public class RouterActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
     private static final int MAX_RETRIES = 10;
-    private static final Duration DURATION = Duration.
+    private static final Duration DURATION = Duration.ofMinutes(1);
 
     private Router router;
     private ActorRef storage;
     private static SupervisorStrategy strategy =
-            new OneForOneStrategy(MAX_RETRIES, )
+            new OneForOneStrategy(MAX_RETRIES, DURATION,)
 
 
     public RouterActor() {
