@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="147351f3-5c0f-433d-b8ee-109e202df302" name="Default Changelist" comment="" />
+    <list default="true" id="147351f3-5c0f-433d-b8ee-109e202df302" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab5/CasherActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab5/CasherActor.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab5/ConnectTimeApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+            <state relative-caret-position="594">
+              <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,11 +47,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab5/CasherActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="108">
+              <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding>
+                <element signature="e#148#149#0" expanded="true" />
+                <element signature="e#175#176#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -178,8 +184,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/lab5/HttpParse.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab5/CustomFlow.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lab5/CasherActor.java" />
         <option value="$PROJECT_DIR$/src/main/java/lab5/ConnectTimeApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lab5/CasherActor.java" />
       </list>
     </option>
   </component>
@@ -320,12 +326,12 @@
       <workItem from="1605461716682" duration="1230000" />
       <workItem from="1605706096386" duration="5470000" />
       <workItem from="1607447609427" duration="3202000" />
-      <workItem from="1607807852938" duration="36758000" />
+      <workItem from="1607807852938" duration="36799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51514000" />
+    <option name="totallyTimeSpent" value="51555000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="32" width="1920" height="977" extended-state="6" />
@@ -578,19 +584,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lab5/CasherActor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/lab5/ConnectTimeApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="594">
+          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lab5/ConnectTimeApp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/lab5/CasherActor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+        <state relative-caret-position="108">
+          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#148#149#0" expanded="true" />
+            <element signature="e#175#176#0" expanded="true" />
           </folding>
         </state>
       </provider>
