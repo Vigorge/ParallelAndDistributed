@@ -1,6 +1,8 @@
 package lab4.actors;
 
 import akka.actor.AbstractActor;
+import akka.event.Logging;
+import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
 import lab4.messages.GetMessage;
 import lab4.messages.PutMessage;
@@ -9,6 +11,9 @@ import lab4.messages.ResultMessage;
 import java.util.*;
 
 public class StorageActor extends AbstractActor {
+    private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
+
+
     private Map<String, ArrayList<String>> storage = new HashMap<>();
 
     public Receive createReceive() {
