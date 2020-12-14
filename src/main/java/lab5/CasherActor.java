@@ -16,6 +16,7 @@ public class CasherActor extends AbstractActor {
                         sender().tell(cash.get(r), ActorRef.noSender()))
                 .match(StoreMessage.class, r ->
                         cash.put(r.getUrl(), r.getAvgTime()))
+                .matchAny()
                 .build();
     }
 }
