@@ -57,7 +57,9 @@ _Программа представляет из себя приложение 
 Package: `lab4`  
 Запуск программы:
 
-	
+	mvn compile
+	mvn exec:java -Dexec.mainClass="lab4.TaskTestingApp"
+	//далее обращение к серверу с помощью curl
 
 <a name="lab5"><h3>Лабораторная работа 5</h3></a>
 Статус: _в работе_  
