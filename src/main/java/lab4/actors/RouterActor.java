@@ -21,7 +21,7 @@ import java.util.List;
 
 public class RouterActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
-    private static int 
+    private static final int MAX_RETRIES = 
 
     private Router router;
     private ActorRef storage;
