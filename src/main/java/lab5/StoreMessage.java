@@ -8,4 +8,12 @@ public class StoreMessage {
         this.url = url;
         this.avgTime = avgTime;
     }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public float getAvgTime() {
+        return avgTime;
+    }
 }

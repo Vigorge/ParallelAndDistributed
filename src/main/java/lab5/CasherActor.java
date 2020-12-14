@@ -14,6 +14,7 @@ public class CasherActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(String.class, r ->
                         sender().tell(cash.get(r), ActorRef.noSender()))
-                .match().build();
+                .match(StoreMessage.class, r ->
+                        ).build();
     }
 }
