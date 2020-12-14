@@ -32,7 +32,7 @@ public class RouterActor extends AbstractActor {
                     DeciderBuilder.matchAny(o -> restart()).build());
 
     public SupervisorStrategy supervisorStrategy() {
-        
+        return strategy;
     }
 
     public RouterActor() {
