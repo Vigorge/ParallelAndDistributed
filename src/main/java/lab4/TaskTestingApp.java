@@ -27,7 +27,7 @@ public class TaskTestingApp {
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create(SYS_NAME);
         ActorRef routerActor = system.actorOf(Props.create(RouterActor.class), "router");
-        LoggingAdapter l = Logging.getLogger(system, System.out);
+        LoggingAdapter l = Logging.getLogger(system, LOG_SOURCE);
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         HttpParse instance = new HttpParse(routerActor);
