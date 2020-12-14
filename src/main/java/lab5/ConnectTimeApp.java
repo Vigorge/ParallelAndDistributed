@@ -17,6 +17,8 @@ import java.util.concurrent.CompletionStage;
 public class ConnectTimeApp {
     private static final int PORT = 8088;
     private static final String HOST = "localhost";
+    private static final String SYS_NAME = "webtimet";
+
 
     private static Flow<HttpRequest, HttpResponse, NotUsed> createFlow(ActorMaterializer materializer, ActorRef casher) {
         return Flow.of(HttpRequest.class)
@@ -26,7 +28,7 @@ public class ConnectTimeApp {
     }
 
     public static void main(String[] args) throws Exception {
-        ActorSystem system = ActorSystem.create("webtest");
+        ActorSystem system = ActorSystem.create(SYS_NAME);
         ActorRef casherActor = system.actorOf(Props.create(CasherActor.class), "cash");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);

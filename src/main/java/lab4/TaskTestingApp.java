@@ -22,7 +22,7 @@ public class TaskTestingApp {
     private static final String SYS_NAME = "webtest";
 
     public static void main(String[] args) throws Exception {
-        ActorSystem system = ActorSystem.create("webtest");
+        ActorSystem system = ActorSystem.create(SYS_NAME);
         ActorRef routerActor = system.actorOf(Props.create(RouterActor.class), "router");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);

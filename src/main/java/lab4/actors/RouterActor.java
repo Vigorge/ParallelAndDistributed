@@ -24,6 +24,7 @@ public class RouterActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
     private static final int MAX_RETRIES = 10;
     private static final Duration DURATION = Duration.ofMinutes(1);
+    private static final String STORAGE_NAME = "storage";
 
     private Router router;
     private ActorRef storage;
@@ -36,7 +37,7 @@ public class RouterActor extends AbstractActor {
     }
 
     public RouterActor() {
-        storage = getContext().actorOf(Props.create(StorageActor.class), "storage");
+        storage = getContext().actorOf(Props.create(StorageActor.class), STORAGE_NAME);
         getContext().watch(storage);
 
         List<Routee> routees = new ArrayList<Routee>();
