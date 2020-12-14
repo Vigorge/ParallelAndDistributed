@@ -27,7 +27,7 @@ public class ConnectTimeApp {
     private static final String SYS_NAME = "webtimet";
     private static final String URL = "connect";
     private static final String COUNT = "repeat";
-    private final static Timeout TIMEOUT = Timeout.create(Duration.ofSeconds(5));
+    private final static Duration TIMEOUT = Duration.ofSeconds(5);
     private static final Object LOG_SOURCE = System.out;
     private static LoggingAdapter l;
 
@@ -39,9 +39,9 @@ public class ConnectTimeApp {
                     long count = Long.parseLong(query.getOrElse(COUNT, "0"));
                     return new Pair<>(url, count);
                         })
-                .mapAsync(5, (Pair<String, Long> p) ->
-                        Patterns.ask(casher, p.first(), TIMEOUT)
-                        .thenCompose)
+                .mapAsync(5, (Pair<String, Long> p) -> {
+                    CompletionStage<Object> s = Patterns.ask(casher, p.first(), TIMEOUT).thenCompose((Object ));
+                        })
                 .map();
     }
 

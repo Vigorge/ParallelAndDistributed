@@ -38,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab5/ConnectTimeApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="29" column="81" selection-start-line="29" selection-start-column="81" selection-end-line="29" selection-end-column="81" />
+            <state relative-caret-position="486">
+              <caret line="42" column="109" selection-start-line="42" selection-start-column="109" selection-end-line="42" selection-end-column="109" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -334,15 +334,16 @@
       <workItem from="1605461716682" duration="1230000" />
       <workItem from="1605706096386" duration="5470000" />
       <workItem from="1607447609427" duration="3202000" />
-      <workItem from="1607807852938" duration="41074000" />
+      <workItem from="1607807852938" duration="41528000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55830000" />
+    <option name="totallyTimeSpent" value="56284000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="32" width="1920" height="977" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20010729" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -595,8 +596,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lab5/ConnectTimeApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="29" column="81" selection-start-line="29" selection-start-column="81" selection-end-line="29" selection-end-column="81" />
+        <state relative-caret-position="486">
+          <caret line="42" column="109" selection-start-line="42" selection-start-column="109" selection-end-line="42" selection-end-column="109" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
