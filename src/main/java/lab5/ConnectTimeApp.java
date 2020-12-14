@@ -25,6 +25,7 @@ import java.util.concurrent.CompletionStage;
 
 import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Sink;
+import akka.stream.javadsl.Source;
 import org.asynchttpclient.AsyncHttpClient;
 import static org.asynchttpclient.Dsl.asyncHttpClient;
 
@@ -43,14 +44,14 @@ public class ConnectTimeApp {
                 .map((r) -> {
                     Query query = r.getUri().query();
                     String url = query.getOrElse(URL, HOST);
-                    long count = Long.parseLong(query.getOrElse(COUNT, "0"));
+                    int count = Integer.parseInt(query.getOrElse(COUNT, "0"));
                     return new Pair<>(url, count);
                         })
-                .mapAsync(5, (Pair<String, Integer> p) ->
+                .mapAsync(2, (Pair<String, Integer> p) ->
                         Patterns.ask(casher, p.first(), TIMEOUT).thenCompose((Object t) -> {
                             if ((float) t >= 0)
-                                return CompletableFuture.completedFuture(new Pair<>(p.first(), (float) t));
-                            Sink<Pair<String, Integer>, CompletionStage<Long>> f =
+                                return CompletableFuture.completedFuture(new Pair<>(p.first(), (float)t));
+                            Sink<Pair<String, Integer>, CompletionStage<Long>> s =
                                     Flow.<Pair<String, Integer>>create()
                                     .mapConcat(pr -> new ArrayList<>(Collections.nCopies(pr.second(), pr.first())))
                                     .mapAsync(p.second(), (String url) -> {
@@ -60,9 +61,15 @@ public class ConnectTimeApp {
                                         return CompletableFuture.completedFuture(start - System.currentTimeMillis());
                                     })
                                     .toMat(Sink.fold(0L, Long::sum), Keep.right());
-
+                            return Source.from(Collections.singletonList(p))
+                                    .toMat(s, Keep.right())
+                                    .run(materializer)
+                                    .thenApply(time -> new Pair<>(p.first(), (float)time / (float)p.second())
+                                    );
                                 }))
-                .map();
+                .map((r) -> {
+                    cash
+                });
     }
 
     public static void main(String[] args) throws Exception {
