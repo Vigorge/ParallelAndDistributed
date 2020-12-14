@@ -18,6 +18,8 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+import static akka.actor.SupervisorStrategy.restart;
+
 public class RouterActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
     private static final int MAX_RETRIES = 10;
@@ -27,7 +29,7 @@ public class RouterActor extends AbstractActor {
     private ActorRef storage;
     private static SupervisorStrategy strategy =
             new OneForOneStrategy(MAX_RETRIES, DURATION,
-                    DeciderBuilder.matchAny(o -> es))
+                    DeciderBuilder.matchAny(o -> restart()).build());
 
 
     public RouterActor() {
