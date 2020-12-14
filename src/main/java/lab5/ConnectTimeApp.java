@@ -42,9 +42,10 @@ public class ConnectTimeApp {
                         })
                 .mapAsync(5, (Pair<String, Long> p) ->
                         Patterns.ask(casher, p.first(), TIMEOUT).thenCompose((Object t) -> {
-                            if ((Float) t >= 0)
-                                return CompletableFuture.completedFuture(new Pair<>(p.first(), (Float) t));
-                            
+                            if ((float) t >= 0)
+                                return CompletableFuture.completedFuture(new Pair<>(p.first(), (float) t));
+                            Flow<Pair<String, Long>, Float, NotUsed> f =
+                                    Flow.<Pair<String, Long>>create()
                                 }))
                 .map();
     }
