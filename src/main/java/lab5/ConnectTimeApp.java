@@ -37,5 +37,5 @@ public class ConnectTimeApp {
         System.in.read();
         binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
     }
-    
+
 }
