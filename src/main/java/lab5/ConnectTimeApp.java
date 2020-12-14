@@ -24,6 +24,8 @@ public class ConnectTimeApp {
     private static final String SYS_NAME = "webtimet";
     private static final String URL = "connect";
     private static final String COUNT = "repeat";
+    private static final Object LOG_SOURCE = System.out;
+    private static LoggingAdapter l;
 
     private static Flow<HttpRequest, HttpResponse, NotUsed> createFlow(ActorMaterializer materializer, ActorRef casher) {
         return Flow.of(HttpRequest.class)
@@ -40,7 +42,7 @@ public class ConnectTimeApp {
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create(SYS_NAME);
         ActorRef casherActor = system.actorOf(Props.create(CasherActor.class), "cash");
-        LoggingAdapter l = Logging.getLogger(system, System.out);
+        l = Logging.getLogger(system, LOG_SOURCE);
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = createFlow(materializer, casherActor);
