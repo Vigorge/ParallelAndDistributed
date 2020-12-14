@@ -45,8 +45,8 @@ public class RouterActor extends AbstractActor {
                         }
                         )
                 .match(GetMessage.class, r ->
-                        storage.tell(r, sender())
-                        )
+                        storage.tell(r, sender()))
+                .matchAny(o -> log.info("recieved unknown message"))
                 .build();
     }
 }
