@@ -17,12 +17,15 @@ import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import akka.util.Timeout;
+import org.asynchttpclient.AsyncHttpClient;
 
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
+
+import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 public class ConnectTimeApp {
     private static final int PORT = 8088;
@@ -49,7 +52,9 @@ public class ConnectTimeApp {
                             Flow<Pair<String, Integer>, Float, NotUsed> f =
                                     Flow.<Pair<String, Integer>>create()
                                     .mapConcat(pr -> new ArrayList<>(Collections.nCopies(pr.second(), pr.first())))
-                                    .mapAsync()
+                                    .mapAsync(p.second(), (String url) -> {
+                                        AsyncHttpClient client = asyncHttpClient()
+                                    })
                                 }))
                 .map();
     }
